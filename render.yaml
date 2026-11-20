@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: webhook-dispatcher
+    runtime: docker
+    plan: free
+    region: singapore
+    branch: main
+    healthCheckPath: /health/ready
+    autoDeployTrigger: "off"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: webhook-dispatcher-db
+          property: connectionString
+      - key: API_KEY
+        generateValue: true
+      - key: EMBEDDED_WORKER
+        value: "true"
+      - key: DEMO_ENABLED
+        value: "true"
+      - key: ALLOW_PRIVATE_NETWORKS
+        value: "false"
+      - key: DOMAIN_RATE
+        value: "2"
+      - key: DOMAIN_BURST
+        value: "1"
+databases:
+  - name: webhook-dispatcher-db
+    plan: free
+    region: singapore
+    postgresMajorVersion: "17"
+    databaseName: dispatcher
+    user: dispatcher
+    ipAllowList: []
