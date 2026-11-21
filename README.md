@@ -5,6 +5,7 @@ A production-grade webhook delivery engine built with Python and PostgreSQL. It 
 - **Live Deployment:** https://webhook-dispatcher-prib.onrender.com
 - **Interactive API Docs (Swagger):** https://webhook-dispatcher-prib.onrender.com/docs
 - **Health Check:** https://webhook-dispatcher-prib.onrender.com/health/ready
+- **Evaluation API key:** Sent through mail
 
 ## Stack
 
