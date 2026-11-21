@@ -2,6 +2,10 @@
 
 A production-grade webhook delivery engine built with Python and PostgreSQL. It accepts event payloads via REST API, persists them durably, and delivers them asynchronously through background workers with exponential retries and per-domain rate limiting.
 
+- **Live Deployment:** https://webhook-dispatcher-prib.onrender.com
+- **Interactive API Docs (Swagger):** https://webhook-dispatcher-prib.onrender.com/docs
+- **Health Check:** https://webhook-dispatcher-prib.onrender.com/health/ready
+
 ## Stack
 
 Python 3.12 · FastAPI · Procrastinate · PostgreSQL 17 · psycopg · aiohttp
@@ -276,7 +280,7 @@ Schema initialization runs at startup. Auto-deploy is disabled in the Blueprint 
 Once deployed, test it the same way:
 
 ```bash
-export BASE_URL=https://your-service.onrender.com
+export BASE_URL=https://webhook-dispatcher-prib.onrender.com
 export API_KEY='your-render-api-key'
 
 # Health check
